@@ -108,5 +108,3 @@ Useful next experiments include another intent dataset, noisy annotators, unequa
 - [Active learning with sampling by uncertainty and density](https://aclanthology.org/C08-1143/), an established research direction; this prototype does not reproduce that paper's algorithm.
 
 Source data and derived reports retain the dataset's [CC BY 3.0 attribution](https://creativecommons.org/licenses/by/3.0/). Pretrained weights and third-party libraries retain their respective licenses. Dataset and encoder revisions are pinned in JSON files.
-
-This prototype was developed with AI assistance. It demonstrates the recorded implementation and offline experiment, with the limitations stated above.
