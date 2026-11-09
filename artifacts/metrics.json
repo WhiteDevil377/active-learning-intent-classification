@@ -1,0 +1,108 @@
+{
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "strategies": [
+    "random",
+    "entropy",
+    "balanced_margin"
+  ],
+  "budgets": [
+    450,
+    900,
+    1500,
+    3000
+  ],
+  "fitted_budget_models": 60,
+  "clean_training_pool": 14995,
+  "classes": 150,
+  "validation_rows": 3000,
+  "test_rows": 4500,
+  "selection": {
+    "strategy": "balanced_margin",
+    "labels": 3000,
+    "deployment_seed": 42,
+    "validation_means_at_final_budget": {
+      "random": 0.93154349908441,
+      "entropy": 0.9172876794475332,
+      "balanced_margin": 0.9432695559166872
+    },
+    "selection_policy": "Mean validation macro-F1; seed fixed in advance"
+  },
+  "selected_policy_final_budget": {
+    "strategy": "balanced_margin",
+    "labels": 3000,
+    "validation_macro_f1_mean": 0.9432695559166872,
+    "validation_macro_f1_std": 0.0037514135841449853,
+    "test_accuracy_mean": 0.9389333333333333,
+    "test_accuracy_std": 0.003116661715187199,
+    "test_macro_f1_mean": 0.9387095974047182,
+    "test_macro_f1_std": 0.0029640989844956873
+  },
+  "paired_vs_random_at_3000": {
+    "entropy": {
+      "paired_differences": [
+        -0.007844371959477847,
+        -0.017046628767381722,
+        -0.013685148879512332,
+        -0.019178472755320475,
+        -0.009705628224671026
+      ],
+      "mean_difference": -0.01349205011727268,
+      "ci95_low": -0.01942224628522375,
+      "ci95_high": -0.0075618539493216095,
+      "scope": "Seed variability on the fixed test set; not new-dataset uncertainty"
+    },
+    "balanced_margin": {
+      "paired_differences": [
+        0.014739733540157673,
+        0.01916025026819168,
+        0.006598480371284299,
+        0.005806204792673353,
+        0.008219165211907908
+      ],
+      "mean_difference": 0.010904766836842984,
+      "ci95_low": 0.0037017277282882077,
+      "ci95_high": 0.018107805945397758,
+      "scope": "Seed variability on the fixed test set; not new-dataset uncertainty"
+    }
+  },
+  "full_data_reference": {
+    "accuracy": 0.9557777777777777,
+    "macro_f1": 0.955737676444317
+  },
+  "deployed_seed42_known_test": {
+    "accuracy": 0.9433333333333334,
+    "macro_f1": 0.9429547887874268
+  },
+  "rejection": {
+    "threshold": 0.2792428433895111,
+    "known_acceptance_rate": 0.9546666666666667,
+    "unknown_rejection_rate": 0.795,
+    "unknown_false_acceptance_rate": 0.20499999999999996,
+    "unknown_detection_roc_auc": 0.9593426666666667,
+    "accepted_known_accuracy": 0.9618249534450651,
+    "known_test_rows": 4500,
+    "unknown_test_rows": 1000,
+    "threshold_policy": "Known validation fifth percentile; no unknown examples used for gate selection"
+  },
+  "local_latency": {
+    "queries": 50,
+    "median_ms": 2.2193960030563176,
+    "p95_ms": 3.2414463639725,
+    "scope": "Sequential local encoding plus head scoring; excludes startup and HTTP overhead"
+  },
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "onnxruntime": "1.31.1",
+    "tokenizers": "0.23.3",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.8.0"
+  }
+}

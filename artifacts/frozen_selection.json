@@ -1,0 +1,11 @@
+{
+  "strategy": "balanced_margin",
+  "labels": 3000,
+  "deployment_seed": 42,
+  "validation_means_at_final_budget": {
+    "random": 0.93154349908441,
+    "entropy": 0.9172876794475332,
+    "balanced_margin": 0.9432695559166872
+  },
+  "selection_policy": "Mean validation macro-F1; seed fixed in advance"
+}
